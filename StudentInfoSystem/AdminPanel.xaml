@@ -1,0 +1,25 @@
+﻿<Window x:Class="StudentInfoSystem.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentInfoSystem"
+        mc:Ignorable="d"
+        Title="Администраторки профил" Height="450" Width="800" Background="Azure">
+    <Window.Resources>
+        <CollectionViewSource x:Key="studentsViewSource" Source="{Binding students}" />
+    </Window.Resources>
+    <Grid>
+        <ListBox Margin="0,40,10,10" Name="listBoxAdminPanel" Background="White" HorizontalAlignment="Right" 
+                 VerticalAlignment="Top" Width="400" Height="380">
+        </ListBox>
+        <Label Margin="390,10,10,10" Name="List" Content="Резултат от търсенето:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"></Label>
+        <Label Margin="10,10,10,10" Name="WindowAdminName" Content="Опции за контрол на системата:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Height="30"></Label>
+        <Button Content="Добави студент" HorizontalAlignment="Left" Margin="95,55,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="AddStudentBtn"/>
+        <Button Content="Премахни студент" HorizontalAlignment="Left" Margin="95,85,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="RemoveStudentBtn"/>
+        <Button Content="Проверка на студент" HorizontalAlignment="Left" Margin="95,115,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="CheckStudentBtn"/>
+        <Button Content="Проверка по факултет" HorizontalAlignment="Left" Margin="95,145,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="CheckFacultyBtn"/>
+        <Button Content="Проверка по група" HorizontalAlignment="Left" Margin="95,175,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="CheckGroupBtn"/>
+        <Button Content="Изход" HorizontalAlignment="Left" Margin="95,375,0,0" VerticalAlignment="Top" Width="200" Height="20" Background="PaleTurquoise" Click="ExitAdminMode"/>
+    </Grid>
+</Window>
